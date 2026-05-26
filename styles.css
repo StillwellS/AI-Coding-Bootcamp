@@ -5,46 +5,138 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #0b1120;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8f8f7;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
-    padding: 20px;
+    padding: 0 20px;
+    color: #1e1e26;
+}
+
+.pricing-section {
+    width: min(1040px, 100%);
+    padding: 112px 0;
+}
+
+.pricing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.page-title {
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #1e1e26;
+    margin-bottom: 20px;
+}
+
+.billing-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px;
+    border-radius: 999px;
+    background-color: #efeff1;
+    border: 1px solid rgba(30, 30, 38, 0.025);
+}
+
+.billing-option {
+    border: none;
+    background: transparent;
+    color: #747480;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.billing-option.is-active {
+    background-color: #e1e1e4;
+    color: #1e1e26;
 }
 
 .cards-container {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
 }
 
 .card {
-    background-color: #111827;
-    border: 1px solid #243041;
-    border-radius: 12px;
-    padding: 40px 32px;
-    width: 320px;
-    flex-shrink: 0;
+    background-color: #f3f3f4;
+    border: 1px solid rgba(30, 30, 38, 0.025);
+    border-radius: 4px;
+    padding: 16px;
+    width: auto;
+    flex: 1 1 calc((100% - 24px) / 3);
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.card-wide {
+    width: 100%;
+    flex: 0 0 100%;
+    flex-basis: 100%;
+    margin-top: 28px;
+}
+
+.enterprise-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.enterprise-description {
+    max-width: 58ch;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #747480;
+}
+
+.enterprise-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.enterprise-details .card-content {
+    margin-bottom: 24px;
+}
+
+.enterprise-details .download-button {
+    margin-top: 0;
 }
 
 .card-title {
-    font-size: 32px;
-    font-weight: 600;
-    color: #f8fafc;
-    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #1e1e26;
+    margin-bottom: 4px;
 }
 
 .card-price {
-    font-size: 20px;
-    color: #93c5fd;
+    font-size: 22px;
+    font-weight: 500;
+    color: #3f46e8;
+    margin-bottom: 4px;
+}
+
+.price-note {
+    font-size: 14px;
+    color: #747480;
     margin-bottom: 24px;
 }
 
@@ -54,8 +146,8 @@ body {
 }
 
 .includes-text {
-    font-size: 16px;
-    color: #e2e8f0;
+    font-size: 15px;
+    color: #747480;
     margin-bottom: 16px;
 }
 
@@ -67,38 +159,75 @@ body {
 .features-list li {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
     font-size: 15px;
-    color: #cbd5e1;
+    color: #1e1e26;
     line-height: 1.5;
 }
 
 .checkmark {
-    color: #60a5fa;
-    font-size: 18px;
-    margin-right: 12px;
-    font-weight: bold;
+    color: #1e1e26;
+    font-size: 16px;
+    margin-right: 8px;
+    font-weight: 400;
     margin-top: 1px;
 }
 
 .download-button {
-    width: 100%;
-    background-color: #2563eb;
+    width: fit-content;
+    background-color: #e1e1e4;
     border: none;
     border-radius: 999px;
-    padding: 14px 24px;
+    padding: 12px 20px;
     font-size: 16px;
     font-weight: 500;
-    color: #eff6ff;
+    color: #1e1e26;
     cursor: pointer;
     transition: background-color 0.2s ease;
     margin-top: auto;
+    align-self: flex-start;
 }
 
 .download-button:hover {
-    background-color: #1d4ed8;
+    background-color: #d7d7db;
 }
 
 .download-button:active {
-    background-color: #1e40af;
+    background-color: #ceced3;
+}
+
+.download-button.pro-button {
+    background-color: #3f46e8;
+    color: #f8f8ff;
+}
+
+.download-button.pro-button:hover {
+    background-color: #363dd4;
+}
+
+.download-button.pro-button:active {
+    background-color: #2e34bf;
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 0 16px;
+    }
+
+    .card {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .card.card-wide {
+        width: 100%;
+    }
+
+    .enterprise-card {
+        grid-template-columns: 1fr;
+    }
+
+    .enterprise-details {
+        padding-top: 0;
+    }
 }

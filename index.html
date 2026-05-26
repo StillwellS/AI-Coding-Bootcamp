@@ -4,84 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cards-container">
-        <div class="card">
-            <h1 class="card-title">Hobby</h1>
-            <p class="card-price">Free</p>
-            <div class="card-content">
-                <p class="includes-text">Includes:</p>
-                <ul class="features-list">
-                    <li>
-                        <span class="checkmark">✓</span>
-                        No credit card required
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Limited Agent requests
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Limited Tab completions
-                    </li>
-                </ul>
+    <main class="pricing-section">
+        <div class="pricing-header">
+            <h1 class="page-title">Pricing plans</h1>
+            <div class="billing-toggle" role="group" aria-label="Billing period">
+                <button class="billing-option is-active" type="button" data-billing="monthly" aria-pressed="true">Monthly</button>
+                <button class="billing-option" type="button" data-billing="annual" aria-pressed="false">Annual</button>
             </div>
-            <button class="download-button">Download</button>
         </div>
-        <div class="card">
-            <h1 class="card-title">Pro</h1>
-            <p class="card-price">$20/mo.</p>
-            <div class="card-content">
-                <p class="includes-text">Everything in Hobby, plus:</p>
-                <ul class="features-list">
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Extended limits on Agent
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Unlimited Tab completions
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Background Agents
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Maximum context windows
-                    </li>
-                </ul>
+        <div class="cards-container">
+            <div class="card">
+                <h2 class="card-title">Hobby</h2>
+                <p class="card-price" data-monthly="Free" data-annual="Free">Free</p>
+                <p class="price-note" data-monthly="No cost to get started" data-annual="No cost to get started">No cost to get started</p>
+                <div class="card-content">
+                    <p class="includes-text">Includes:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            No credit card required
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Limited Agent requests
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Limited Tab completions
+                        </li>
+                    </ul>
+                </div>
+                <button class="download-button">Download</button>
             </div>
-            <button class="download-button">Get Pro</button>
-        </div>
-        <div class="card">
-            <h1 class="card-title">Teams</h1>
-            <p class="card-price">$49/mo.</p>
-            <div class="card-content">
-                <p class="includes-text">Everything in Pro, plus:</p>
-                <ul class="features-list">
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Shared workspaces for your team
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Usage insights and billing controls
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Priority support for faster help
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Admin tools and teammate roles
-                    </li>
-                </ul>
+
+            <div class="card">
+                <h2 class="card-title">Pro</h2>
+                <p class="card-price" data-monthly="$20/mo." data-annual="$16/mo.">$20/mo.</p>
+                <p class="price-note" data-monthly="Billed monthly" data-annual="Billed annually at $192">Billed monthly</p>
+                <div class="card-content">
+                    <p class="includes-text">Everything in Hobby, plus:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Extended limits on Agent
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Unlimited Tab completions
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Background Agents
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Maximum context windows
+                        </li>
+                    </ul>
+                </div>
+                <button class="download-button pro-button">Get Pro</button>
             </div>
-            <button class="download-button">Start Team Plan</button>
+
+            <div class="card">
+                <h2 class="card-title">Teams</h2>
+                <p class="card-price" data-monthly="$49/mo." data-annual="$39/mo.">$49/mo.</p>
+                <p class="price-note" data-monthly="Billed monthly" data-annual="Billed annually at $468">Billed monthly</p>
+                <div class="card-content">
+                    <p class="includes-text">Everything in Pro, plus:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Shared workspaces for your team
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Usage insights and billing controls
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Priority support for faster help
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Admin tools and teammate roles
+                        </li>
+                    </ul>
+                </div>
+                <button class="download-button">Get Teams</button>
+            </div>
+
+            <div class="card card-wide enterprise-card">
+                <div class="enterprise-copy">
+                    <h2 class="card-title">Enterprise</h2>
+                    <p class="card-price">Custom pricing</p>
+                    <p class="price-note">Built for larger organizations with tailored rollout and support.</p>
+                    <p class="enterprise-description">
+                        Ideal for companies that need security reviews, centralized administration, and a deployment plan shaped around how their teams work.
+                    </p>
+                </div>
+
+                <div class="enterprise-details">
+                    <div class="card-content">
+                        <p class="includes-text">Includes:</p>
+                        <ul class="features-list">
+                            <li>
+                                <span class="checkmark">✓</span>
+                                SSO, SCIM, and advanced access controls
+                            </li>
+                            <li>
+                                <span class="checkmark">✓</span>
+                                Procurement support and security review help
+                            </li>
+                            <li>
+                                <span class="checkmark">✓</span>
+                                Dedicated onboarding for your organization
+                            </li>
+                            <li>
+                                <span class="checkmark">✓</span>
+                                Custom usage guidance and priority support
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="download-button">Contact Sales</button>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <script>
+        const billingButtons = document.querySelectorAll(".billing-option");
+        const billingValues = document.querySelectorAll("[data-monthly][data-annual]");
+
+        function updateBilling(period) {
+            billingValues.forEach((element) => {
+                element.textContent = element.dataset[period];
+            });
+
+            billingButtons.forEach((button) => {
+                const isActive = button.dataset.billing === period;
+                button.classList.toggle("is-active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+        }
+
+        billingButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                updateBilling(button.dataset.billing);
+            });
+        });
+    </script>
 </body>
 </html>

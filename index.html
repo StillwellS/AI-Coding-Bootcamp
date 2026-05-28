@@ -45,7 +45,7 @@
 
             <div class="card">
                 <h2 class="card-title">Pro</h2>
-                <p class="card-price" data-monthly="$20/mo." data-annual="$16/mo.">$20/mo.</p>
+                <p class="card-price" data-monthly="$20/mo." data-annual="$16/mo.">$20<span class="price-frequency">/mo.</span></p>
                 <p class="price-note" data-monthly="Billed monthly" data-annual="Billed annually at $192">Billed monthly</p>
                 <div class="card-content">
                     <p class="includes-text">Everything in Hobby, plus:</p>
@@ -73,7 +73,7 @@
 
             <div class="card">
                 <h2 class="card-title">Teams</h2>
-                <p class="card-price" data-monthly="$49/mo." data-annual="$39/mo.">$49/mo.</p>
+                <p class="card-price" data-monthly="$49/mo." data-annual="$39/mo.">$49<span class="price-frequency">/mo.</span></p>
                 <p class="price-note" data-monthly="Billed monthly" data-annual="Billed annually at $468">Billed monthly</p>
                 <div class="card-content">
                     <p class="includes-text">Everything in Pro, plus:</p>
@@ -141,9 +141,28 @@
         const billingButtons = document.querySelectorAll(".billing-option");
         const billingValues = document.querySelectorAll("[data-monthly][data-annual]");
 
+        function formatPriceValue(value) {
+            const slashIndex = value.indexOf("/");
+
+            if (slashIndex === -1) {
+                return value;
+            }
+
+            const amount = value.slice(0, slashIndex);
+            const frequency = value.slice(slashIndex);
+
+            return `${amount}<span class="price-frequency">${frequency}</span>`;
+        }
+
         function updateBilling(period) {
             billingValues.forEach((element) => {
-                element.textContent = element.dataset[period];
+                const value = element.dataset[period];
+
+                if (element.classList.contains("card-price")) {
+                    element.innerHTML = formatPriceValue(value);
+                } else {
+                    element.textContent = value;
+                }
             });
 
             billingButtons.forEach((button) => {

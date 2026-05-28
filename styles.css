@@ -134,6 +134,10 @@ body {
     margin-bottom: 4px;
 }
 
+.price-frequency {
+    font-size: 0.7em;
+}
+
 .price-note {
     font-size: 14px;
     color: #747480;
